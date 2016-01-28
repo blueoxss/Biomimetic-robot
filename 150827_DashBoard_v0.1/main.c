@@ -12,7 +12,7 @@ uint8_t sendArray[NUM_BYTES] = {0x00, 0xff, 0xff};
 uint8_t receiveArray[NUM_BYTES];
 bool success;
 
-
+//good luck
 
 ISR(USARTD0_RXC_vect)
 {
