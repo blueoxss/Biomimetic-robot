@@ -68,7 +68,7 @@ int main(void)
 
      /* Enable global interrupts. */
      sei();
-
+	 // importing client's data
 	 while(1){
 		 /* Fetch received data as it is received. */
 	     i = 0;
