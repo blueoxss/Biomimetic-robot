@@ -1,0 +1,7 @@
+[Sfr]
+sfr = "ADCCON2",	"SFR",	0xb5,	1,	base=16,	modified
+sfr = "IEN1",	"SFR",	0xb8,	1,	base=16,	modified
+
+
+[SfrGroupInfo]
+group = "Custom", "ADCCON2", "IEN1"

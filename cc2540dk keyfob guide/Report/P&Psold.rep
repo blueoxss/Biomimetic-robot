@@ -1,0 +1,13 @@
+PICK AND PLACE COORDINATES
+Thursday, September 20, 2012
+Reference point is bottom left corner at 1000.00, 1000.00
+Board side: Solder side (bottom)
+Number of components:7     
+C321,     56.440000,  57.100000, 270.000,    C_15P_0402_NP0_J_50, 
+FM4,      43.620000,  41.750000, 0.000,      FIDUCIAL_MARK_1mm,   
+FM6,      69.290000,  41.690000, 0.000,      FIDUCIAL_MARK_1mm,   
+FM2,      47.100000,  86.940000, 0.000,      FIDUCIAL_MARK_1mm,   
+C331,     57.730000,  57.090000, 90.000,     C_15P_0402_NP0_J_50, 
+B2,       59.260000,  47.920000, 0.000,      Piezo_sounder,       
+X2,       51.110000,  59.400000, 180.000,    X_32.768/20/50/40/12,
+END OF LIST

@@ -1,0 +1,62 @@
+--------------------------------------------------------------------------------
+                                   Parts List
+
+                     CADSTAR Design Editor Version 12.1.0.4
+
+Design:     C:\DesignSync_WORKDIR\evm\em\CC2540_Keyfob\Cadstar\CC2540Keyfob.pcb
+
+Design Title:
+CC2540 Keyfob 1.2 .0
+(CC2540 MiniDK 1.2.0)
+
+Date:      Wednesday, September 19, 2012
+Time:      11:58 PM
+
+--------------------------------------------------------------------------------
+Part Name/Number       Description                      Qty.   Comps.
+----------------       -----------                      ----   ------
+
+ANTENNA_IIFA_BLE       Antenna single ended IIFA, 245   1      A3
+CC2540                 Single chip BLE                  1      U1
+CMA3000-D01            Acc meter from VTI (Digital)     1      A1
+CR2032_SOCKET          Li buttoncell battery socket     1      B1
+C_0805                 Capacitor 0805, general          1      C9
+C_100N_0402_X5R_K_10   Capacitor 0402                   7      C2
+                                                               C101
+                                                               C211
+                                                               C241
+                                                               C281
+                                                               C291
+                                                               C311
+C_12P_0402_NP0_J_50    Capacitor 0402                   2      C221
+                                                               C231
+C_15P_0402_NP0_J_50    Capacitor, 0402                  2      C321
+                                                               C331
+C_18P_0402_NP0_J_50    Capacitor 0402                   2      C251
+                                                               C261
+C_1N_0402_NP0_J_50     Capacitor 0402                   1      C8
+C_1P0_0402_NP0_C_50    Capacitor 0402                   3      C252-253
+                                                               C262
+C_1U_0402_X5R_K_6P3    Capacitor 0402                   2      C391
+                                                               C401
+C_220P_0402_NP0_J_50   Capacitor 0402                   1      C271
+C_47U_1206_X5R_L_6P3   Capacitor 1206                   1      C7
+FIDUCIAL_MARK_1mm      Fiducial mark, 1mm metal diame   6      FM1-6
+DLE-020-081            Orange and green diode in a pa   1      D2
+L_1N0_0402_S           Inductor 0402                    1      L252
+L_2N0_0402_S           Inductor 0402                    2      L251
+                                                               L261
+L_3N0_0402_S           Inductor 0402                    1      L253
+CMT-1603               Buzzer CUI  INC CMT-1603         1      B2
+R_0402                 Resistor 0402, general           1      R1
+R_270_0402_F           Resistor 0402                    2      R11-12
+R_2K7_0402_F           Resistor 0402                    1      R2
+R_56K_0402_F           Resistor 0402                    1      R301
+STL21                  PIN HEADER SMD 1,27 mm Gerry     2      DEBUG
+                                                               TEST
+147873-2               SMD 2 pin button switch          2      B3-4
+X_32.000/10/20/60/10   Epson Toyocom FA128 32 MHz 2x1   1      X1
+X_32.768/20/50/40/12   Crystal, MC-306 SMD              1      X2
+--------------------------------------------------------------------------------
+                                 End of report
+--------------------------------------------------------------------------------

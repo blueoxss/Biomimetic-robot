@@ -1,0 +1,19 @@
+
+dashboard_v1.name=Dash Robotics Dashboard v1.0
+dashboard_v1.upload.protocol=avr109
+dashboard_v1.upload.maximum_size=28672
+dashboard_v1.upload.speed=57600
+dashboard_v1.upload.disable_flushing=true
+dashboard_v1.bootloader.low_fuses=0xff
+dashboard_v1.bootloader.high_fuses=0xd8
+dashboard_v1.bootloader.extended_fuses=0xcb
+dashboard_v1.bootloader.path=caterina
+dashboard_v1.bootloader.file=Caterina-dashboardV1.hex
+dashboard_v1.bootloader.unlock_bits=0x3F
+dashboard_v1.bootloader.lock_bits=0x2F
+dashboard_v1.build.mcu=atmega32u4
+dashboard_v1.build.f_cpu=8000000L
+dashboard_v1.build.vid=0x1D50	
+dashboard_v1.build.pid=0x5556
+dashboard_v1.build.core=arduino:arduino
+dashboard_v1.build.variant=dashboard_v1

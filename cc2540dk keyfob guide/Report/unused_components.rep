@@ -1,0 +1,40 @@
+--------------------------------------------------------------------------------
+                            Unused Components Report
+
+                     CADSTAR Design Editor Version 12.1.0.4
+
+Design:     C:\DesignSync_WORKDIR\evm\em\CC2540_Keyfob\Cadstar\CC2540Keyfob.pcb
+
+Design Title:
+CC2540 Keyfob 1.2 .0
+(CC2540 MiniDK 1.2.0)
+
+Date:      Wednesday, September 19, 2012
+Time:      11:56 PM
+
+--------------------------------------------------------------------------------
+
+Unused Elements
+
+  FM1 is not used, this uses pins 1.
+  FM2 is not used, this uses pins 1.
+  FM3 is not used, this uses pins 1.
+  FM4 is not used, this uses pins 1.
+  FM5 is not used, this uses pins 1.
+  FM6 is not used, this uses pins 1.
+
+Unconnected Components
+
+  FM1 is not connected
+  FM2 is not connected
+  FM3 is not connected
+  FM4 is not connected
+  FM5 is not connected
+  FM6 is not connected
+
+Unallocated Parts
+
+  No unallocated parts to report.
+--------------------------------------------------------------------------------
+                                 End of report
+--------------------------------------------------------------------------------

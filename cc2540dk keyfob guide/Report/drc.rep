@@ -1,0 +1,54 @@
+--------------------------------------------------------------------------------
+                            Design Rule Check Report
+
+                     CADSTAR Design Editor Version 12.1.0.4
+
+Design:     C:\DesignSync_WORKDIR\evm\em\CC2540_Keyfob\Cadstar\CC2540Keyfob.pcb
+
+Design Title:
+CC2540 Keyfob 1.2 .0
+(CC2540 MiniDK 1.2.0)
+
+Date:      Wednesday, September 19, 2012
+Time:      11:55 PM
+
+--------------------------------------------------------------------------------
+
+Summary of Errors By Layer
+
+  Layer 1 (physical layer 1) has 26 error(s).
+
+Detailed List of Errors By Layer
+
+
+Layer 1 (Physical Layer 1)
+
+  CO - Comp Copper to Copper at 46.703700 64.253200
+  CO - Comp Copper to Copper at 46.703700 65.096300
+  CO - Comp Copper to Copper at 46.703700 65.096300
+  CO - Comp Copper to Copper at 46.703700 65.096300
+  CO - Comp Copper to Copper at 46.703700 65.096300
+  CO - Comp Copper to Copper at 46.820600 64.253200
+  CO - Comp Copper to Copper at 46.820600 65.096300
+  CP - Comp Copper to Pad at 45.620600 64.733200
+  CP - Comp Copper to Pad at 45.620600 64.733200
+  CP - Comp Copper to Pad at 45.620600 66.753200
+  CP - Comp Copper to Pad at 45.620600 66.753200
+  CP - Comp Copper to Pad at 45.620600 66.753200
+  CP - Comp Copper to Pad at 46.620600 64.733200
+  CP - Comp Copper to Pad at 46.620600 66.753200
+  CR - Comp Copper to Route at 46.224600 64.733200
+  CR - Comp Copper to Route at 46.224600 64.733200
+  CR - Comp Copper to Route at 46.224600 66.753200
+  CR - Comp Copper to Route at 46.224600 66.753200
+  CR - Comp Copper to Route at 46.224600 66.753200
+  CR - Comp Copper to Route at 46.820600 64.253200
+  CR - Comp Copper to Route at 46.820600 64.733200
+  CR - Comp Copper to Route at 46.820600 65.153200
+  CR - Comp Copper to Route at 46.820600 65.153200
+  CR - Comp Copper to Route at 46.820600 66.753200
+  CR - Comp Copper to Route at 47.048720 64.733200
+  CR - Comp Copper to Route at 47.246520 64.733200
+--------------------------------------------------------------------------------
+                                 End of report
+--------------------------------------------------------------------------------

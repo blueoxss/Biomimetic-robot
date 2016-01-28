@@ -1,0 +1,159 @@
+while(1) 
+	{
+		
+		
+		//if(1)
+		if(samplingFlag)
+		{
+				
+		
+			
+//				adc_start_conversion(&ADCA, ADC_CH0);			
+				samplingFlag=0;
+				timer=TCC0.CNT;
+				diff_counter=timer-timer_old;
+				
+				
+				/* Create data packet (SS to slave by PC0). */
+				SPI_MasterCreateDataPacket(&dataPacket,
+				                           masterSendData,
+				                           ACC_DATA,
+				                           NUM_BYTES,
+				                           &PORTD,
+				                           PIN0_bm);
+
+
+				/* MASTER: Pull SS line low. This has to be done since
+				 *         SPI_MasterTransceiveByte() does not control the SS line(s). */
+				SPI_MasterSSLow(ssPort, PIN0_bm);
+				_delay_us(5);
+				/* Transceive packet. */
+				SPI_MasterTransceivePacket(&spiMasterD, &dataPacket);
+				/* MASTER: Release SS to slave. */
+				_delay_us(5);
+				SPI_MasterSSHigh(ssPort, PIN0_bm);
+				
+				
+				/* Create data packet (SS to slave by PC1). */
+				SPI_MasterCreateDataPacket(&dataPacket,
+				                           masterSendData_gyro,
+				                           GYRO_DATA,
+				                           NUM_BYTES,
+				                           &PORTD,
+				                           PIN1_bm);
+
+				/* MASTER: Pull SS line low. This has to be done since
+				 *         SPI_MasterTransceiveByte() does not control the SS line(s). */
+				SPI_MasterSSLow(ssPort, PIN1_bm);
+				/* Transceive packet. */
+				_delay_us(5);
+				SPI_MasterTransceivePacket(&spiMasterD, &dataPacket);
+				/* MASTER: Release SS to slave. */
+				_delay_us(5);
+				SPI_MasterSSHigh(ssPort, PIN1_bm);
+
+
+
+
+
+
+
+				timer_old=timer;
+
+				T=(double)diff_counter/2000000.0*32.0;
+
+				ACC_DATA[2]=ACC_DATA[2]+0x80;
+				ACC_DATA[4]=ACC_DATA[4]+0x80;
+				ACC_DATA[6]=ACC_DATA[6]+0x80;
+				YXL= (unsigned int)ACC_DATA[2]*256+ACC_DATA[1];
+				XXL= (unsigned int)ACC_DATA[4]*256+ACC_DATA[3];
+				ZXL= (unsigned int)ACC_DATA[6]*256+ACC_DATA[5];
+
+				GYRO_DATA[2]=GYRO_DATA[2]+0x80;
+				GYRO_DATA[4]=GYRO_DATA[4]+0x80;
+				GYRO_DATA[6]=GYRO_DATA[6]+0x80;
+				XGY= (unsigned int)GYRO_DATA[4]*256+GYRO_DATA[3];
+				YGY= (unsigned int)GYRO_DATA[2]*256+GYRO_DATA[1];
+				ZGY= (unsigned int)GYRO_DATA[6]*256+GYRO_DATA[5];	
+			
+			if(m_IMU_count<Tsample)
+			{
+				m_IMU_count++;
+			}
+			else if(m_IMU_count<Tsample+Bsample)
+			{
+				m_XXL_sum+=XXL;
+				m_YXL_sum+=YXL;
+				m_ZXL_sum+=ZXL;
+				//m_XGY_sum+=XGY;
+				//m_YGY_sum+=YGY;
+				m_ZGY_sum+=ZGY;
+				m_IMU_count++;
+			}
+			else if(m_IMU_count==Tsample+Bsample)
+			{
+				//SetTimer(25,1,NULL);
+				m_biasXXL=(double)m_XXL_sum/(double)Bsample;
+				m_biasYXL=(double)m_YXL_sum/(double)Bsample;
+				m_biasZXL=(double)m_ZXL_sum/(double)Bsample-GRAVITY_COUNT;
+				//m_biasXGY=(double)m_XGY_sum/(double)Bsample;
+				//m_biasYGY=(double)m_YGY_sum/(double)Bsample;
+				m_biasZGY=(double)m_ZGY_sum/(double)Bsample;
+
+				
+				gravityVect[0]=0;
+				gravityVect[1]=0;
+				gravityVect[2]=SCALE_ZXL*GRAVITY_COUNT;
+
+				m_IMU_count++;
+
+		    }
+		    else
+			{
+				
+			
+				//encoder_interface(0);
+				//encoder_interface(1);
+				
+				//host_interface();
+				
+
+
+				//unsigned int a=TCC0.CNT;
+
+				//position_estimator(XXL,YXL,ZXL,XGY,YGY,ZGY);
+				
+				//unsigned int b=TCC0.CNT;
+
+				//TJX=(double)(b-a)/2000000.0*32.0;
+
+				//FF_controller();
+
+				newT=TCC0.CNT;
+				dT=newT-oldT;
+
+				
+				////////////////////////////////////////////////
+				///////////////////////////////////////////////////////
+				///////////////////////////////////////////////////////
+				///////////////////////////////////////////////////////
+				///////////////////////////////////////////////////////
+				///////////////////////////////////////////////////////
+				///////////////////////////////////////////////////////	    	
+				int i,j,k;	
+
+				m_XXL=-SCALE_XXL*((double)XXL-(double)m_biasXXL);
+				m_YXL=-SCALE_YXL*((double)YXL-(double)m_biasYXL);
+				m_ZXL=SCALE_ZXL*((double)ZXL-(double)m_biasZXL);
+				m_XGY=-SCALE_XGY*((double)XGY-(double)m_biasXGY);//-0.001212142/0.00015711
+				m_YGY=SCALE_YGY*((double)YGY-(double)m_biasYGY);//+
+				//if(ZGY<3000)	m_ZGY=SCALE_ZGY*((double)ZGY-(double)m_biasZGY+65536.0);
+				//else 			m_ZGY=SCALE_ZGY*((double)ZGY-(double)m_biasZGY);//+
+				m_ZGY=SCALE_ZGY*((double)ZGY-(double)m_biasZGY);
+				
+				sprintf(XYZ_buffer,"%u %u %u %u %u %u \n",XXL, YXL, ZXL, XGY, YGY, ZGY);
+				uartC0SendTX((unsigned char*)XYZ_buffer);
+		
+			}
+		}
+	}
